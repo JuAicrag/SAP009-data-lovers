@@ -1,12 +1,82 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="icon.png" type="icon" />
+</head>
+
+<body>
+  <header>
+    <nav class="navbar-container">
+      <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png" width="200px">
+      <ul>
+        <li>
+            <a href="https://www.netflix.com/br/browse/genre/81227213">
+                Assista os filmes
+            </a>
+        </li>
+        <li>
+          <a href="https://pt.wikipedia.org/wiki/Studio_Ghibli">
+              Sobre o Studio
+          </a>
+      </li>
+   
+      </ul>
+      <div class="nav-item nav-grow"></div>
+            
+      <form class="filtermenu"></form>
+
+      <input id="search" type="Pesquisa" placeholder="Pesquisar Filmes  🔎"/>
+    
+
+      <section class="Menu"></section>
+      <select class="Filmes" id="filterMenu">
+        <option value="none" selected>Escolha sua busca</option>
+        <option value="Filmes">Filmes</option>
+        <option value="Personagem">Personagem</option>
+      </select>
+
+      <select class="genero" id="genero_id">
+        <option value="todos" selected="Gênero">Buscar por Gênero</option>
+        <option value="Female">♀️ Feminino</option>
+        <option value="Male">♂️ Masculino</option>
+      </select>
+
+      <select class="order" id="order">
+        <option value="ordenar" selected="ordenar">Ordenar por</option>
+        <option value="crescente">A a Z</option>
+        <option value="decrescente">Z a A</option>
+      </select>
+     
+    </div>
+    <select class="order" name="select" id="order">
+      <option value="none">Ordernar:</option>
+      <option value="recente">Mais recentes</option>
+      <option value="antigos">Mais antigos</option>
+      <option value="famosos">Mais famosos</option>
+    </select>
+</header>
+
+<body>
+  <h1>GHIBLI FANS</h1>
+
+  <div id="root"></div>
+  <script src="main.js" type="module"></script>
+
+  <footer>
+    Feito por Julia Garcia
+    <a href="https://github.com/JuAicrag">
+      <img src="imagem/github.png" width="30px">
+    </a>
+    <a href="https://www.linkedin.com/in/julia-garcia-135234187/">
+      <img src="imagem/linkedin.png" width="30px">
+    </a>
+  </footer>
+</body>
+
 </html>
