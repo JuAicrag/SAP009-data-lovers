@@ -11,27 +11,26 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar-container">
-      <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png" width="200px">
-      <ul>
-        <li>
-            <a href="https://www.netflix.com/br/browse/genre/81227213">
-                Assista os filmes
-            </a>
-        </li>
-        <li>
-          <a href="https://pt.wikipedia.org/wiki/Studio_Ghibli">
-              Sobre o Studio
-          </a>
-      </li>
+ <header>
    
-      </ul>
+      <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png" width="200px" alt="studio ghibli">
+      
+       <a href="https://www.netflix.com/br/browse/genre/81227213">
+                Assista os filmes
+      </a>
+     
+      <a href="https://pt.wikipedia.org/wiki/Studio_Ghibli">
+              Sobre o Studio
+      </a>
+     
+    </header>
+
       <div class="nav-item nav-grow"></div>
             
       <form class="filtermenu"></form>
 
-      <input id="search" type="Pesquisa" placeholder="Pesquisar Filmes  🔎"/>
+      <input id="search" type="Pesquisa" placeholder="Pesquisar Filmes"/>
+      <button id="pesquisar">🔎</button>
     
 
       <section class="Menu"></section>
@@ -60,23 +59,29 @@
       <option value="antigos">Mais antigos</option>
       <option value="famosos">Mais famosos</option>
     </select>
-</header>
+   
 
-<body>
-  <h1>GHIBLI FANS</h1>
-
-  <div id="root"></div>
-  <script src="main.js" type="module"></script>
+<div class="content">
+  <section class="listacuriosidades" id="curiosidades_id"></section>
+  <section class="listaImpressa" id="listaImpressa"></section>
+  <section class="listaPersonagem" id="listaPersonagem"></section>
+</div>
+ 
+ 
+  
+  
+</body>
 
   <footer>
     Feito por Julia Garcia
     <a href="https://github.com/JuAicrag">
-      <img src="imagem/github.png" width="30px">
+      <img src="imagens/github.png" width="30px" alt="github">
     </a>
     <a href="https://www.linkedin.com/in/julia-garcia-135234187/">
-      <img src="imagem/linkedin.png" width="30px">
+      <img src="imagens/linkedin.png" width="30px" alt="linkedin">
     </a>
+    <button id="back-to-top">Voltar ao topo</button>
   </footer>
-</body>
-
+  <div id="root"></div>
+  <script src="main.js" type="module"></script>
 </html>

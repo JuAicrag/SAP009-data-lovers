@@ -16,20 +16,11 @@ export const ordemAlfabetica = (data, order) => {
 
 export const ordemPersonagem = (data, order) => {
   if (order === "crescente") {
-    console.log (data.sort((a, z) => a.name > z.name ? 1 : -1))
-  }
+      }
   else if (order === "decrescente") {
     return data.sort((a, z) => a.name > z.name ? -1 : 1)
   }
     return data
-};
-
-export const ordemPersonagem = (data, order) => {
-  if (order === "crescente") {
-    return data.sort((a, z) => a.name > z.name ? 1 : -1)
-  } else if (order === "decrescente") {
-    return data.sort((a, z) => a.name > z.name ? -1 : 1)
-  } return data
 };
 
 
@@ -55,15 +46,12 @@ export const filterGender = (people, gender) => {
   const filteredS = people.filter(people => people.gender === gender);
   return filteredS
 } 
-const btn = document.querySelector("#back-to-top");
-
-btn.addEventListener("click", function(){
-  window.scrollTo(0, 0);
-});
 
 
+//calc agregado
 export const calcAgregado = (personagens) => {
   const mediaPersonagens = personagens.reduce((a, b) => (a + b)) / personagens.length
   const totalPersonagens = personagens.reduce((a, b) => (a + b))
   return {"media": mediaPersonagens, "total": totalPersonagens} 
 }
+
