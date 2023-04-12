@@ -1,18 +1,20 @@
 import data from "./imagens/ghibli/ghibli.js"
 
-import { getPeople, buscarName, ordemAlfabetica, ordemPersonagem, filterDirector, filterGender, calcAgregado } from './data.js';
+import { getPeople, buscarName, ordemAlfabetica,  calcAgregado } from './data.js';
 
 
 const films = data.films
 const people = getPeople(films)
 
 
-const listaImpressa = document.getElementById("listaImpressa")
 
+const listaImpressa = document.getElementById("listaImpressa")
 const showFilme = (filmList) => {
-    listaImpressa.innerHTML = ""
-    filmList.forEach(film => {
-        listaImpressa.innerHTML +=
+  listaImpressa.innerHTML = "";
+  filmList.forEach(film => {
+    listaImpressa.innerHTML +=
+
+
             `  
     <li class="cardGhibli"> 
     <div class="cards">
@@ -32,8 +34,7 @@ const showFilme = (filmList) => {
     </div>
    </li>
   `
-    })
-
+  })
 }
 showFilme(films)
 
@@ -42,9 +43,9 @@ showFilme(films)
 
 const listaPersonagem = document.getElementById("listaPersonagem")
 const showPeople = (peopleList) => {
-    let cardString = ""
-    peopleList.forEach(people => {
-        cardString +=
+  let cardString = ""
+  peopleList.forEach(people => {
+    cardString +=
             `
     <li class="cardPersonagem">
     <div class="cardsPersonagens">
@@ -64,8 +65,8 @@ const showPeople = (peopleList) => {
          
     </li> 
   `
-    })
-    listaPersonagem.innerHTML = cardString
+  })
+  listaPersonagem.innerHTML = cardString
 }
 showPeople(people)
 
@@ -73,8 +74,8 @@ showPeople(people)
 
 const buscarNomes = document.getElementById("search");
 function filtroPesquisa(event) {
-    const charactersByName = buscarName(data.films, event.target.value);
-    showFilme(charactersByName);
+  const charactersByName = buscarName(data.films, event.target.value);
+  showFilme(charactersByName);
 }
 buscarNomes.addEventListener("keyup", filtroPesquisa);
 
@@ -83,89 +84,33 @@ buscarNomes.addEventListener("keyup", filtroPesquisa);
 
 const ordenar = document.querySelector(".order");
 function ordemFilme(event) {
-    const filtrarMenu = document.getElementById("filterMenu")
-
-    if (filtrarMenu.value === "Filmes") {
-        const order = ordemAlfabetica(data.films, event.target.value)
-        showFilme(order);
-    }
-    else if (filtrarMenu.value === "Personagem") {
-        const order = ordemPersonagem(people, event.target.value)
-        showPeople(order);
-    }
+  const order = ordemAlfabetica(data.films, event.target.value)
+  showFilme(order);
 }
 ordenar.addEventListener("change", ordemFilme);
 
 
 
-const filtrarMenu = document.getElementById("filterMenu")
-filtrarMenu.addEventListener("change", function (event) {
-    let filmeMenu = event.target.value
-    if (filmeMenu === "Filmes") {
-        listaPersonagem.innerHTML = ""
-        showFilme(films)
-    }
-    else if (filmeMenu === "Personagem") {
-        listaImpressa.innerHTML = ""
-        showPeople(people)
-    }
-    else {
-        listaImpressa.innerHTML = ""
-        listaPersonagem.innerHTML = ""
-        showFilme(films)
-        showPeople(people)
-    }
-});
-
-
-
-const filterFilm = document.getElementById("select_id")
-filterFilm.addEventListener("change", function (event) {
-    listaImpressa.innerHTML = ""
-    const director = event.target.value
-    let filtrados = films
-    if (director != "todos") {
-        filtrados = filterDirector(films, director)
-    }
-    showFilme(filtrados)
-})
-
-
-
-const femeleMale = document.getElementById("genero_id")
-femeleMale.addEventListener("change", function (event) {
-    listaPersonagem.innerHTML = ""
-    let filtroPersonagem = []
-    const gender = event.target.value
-    filtroPersonagem = filterGender(people, gender)
-    showPeople(filtroPersonagem)
-})
-
-
 
 //início cálc agregado
-let printCuriosidade = document.getElementById("curiosidades_id")
+const printCuriosidade = document.getElementById("curiosidades_id")
 window.addEventListener("load", function (event) {
 
-    let personagens = []
-    for (let i = 0; i < films.length; i++) {
-        personagens.push(films[i].people.length)
-    }
-    const curiosidades = calcAgregado(personagens, event.target.value)
-    const mediaPersonagens = curiosidades.media
-    const totalPersonagens = curiosidades.total
+  const personagens = []
+  for (let i = 0; i < films.length; i++) {
+    personagens.push(films[i].people.length)
+  }
+  const curiosidades = calcAgregado(personagens, event.target.value)
+  const mediaPersonagens = curiosidades.media
+  const totalPersonagens = curiosidades.total
 
-    printCuriosidade.innerHTML =
-        `<div class="class_id">
+  printCuriosidade.innerHTML =
+        `<div class="curiosidades">
   <h4>Curiosidades</h4>
-  <br>
+  
   <p class="soma">A soma de todos os personagens é: ${totalPersonagens}</p>
-  <br>
+  
   <p class="media"> A média de personagens por filme é: ${mediaPersonagens}</p>
-  <br>
-  <a href ="https://pt.quizur.com/tag/b4I-studio-ghibli" target="_blank"> Faça Quiz ou Testes de Personalidade sobre Studio Ghibli</a>
-  <br>
-  <a href ="https://open.spotify.com/playlist/603D3vOd4rWEl3ym4DLWK1?si=13453fabba424c16" target="_blank"> Ouça Studio Ghibli Therapy Session</a>
   </div>`
 });
 
@@ -173,6 +118,6 @@ window.addEventListener("load", function (event) {
 
 const btn = document.querySelector("#back-to-top");
 
-btn.addEventListener("click", function() {
-    window.scrollTo(0, 0);
+btn.addEventListener("click", function () {
+  window.scrollTo(0, 0);
 });

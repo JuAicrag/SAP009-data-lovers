@@ -1,5 +1,5 @@
 export const buscarName = (data, condition) => {
-  const resultadoBusca = data.filter((name) => name.title.toLowerCase().includes(condition.toLowerCase()));
+  const resultadoBusca = data.filter((filme) => filme.title.toLowerCase().includes(condition.toLowerCase()));
   return resultadoBusca;
 };
 
@@ -14,38 +14,21 @@ export const ordemAlfabetica = (data, order) => {
   return data
 };
 
-export const ordemPersonagem = (data, order) => {
-  if (order === "crescente") {
-      }
-  else if (order === "decrescente") {
-    return data.sort((a, z) => a.name > z.name ? -1 : 1)
-  }
-    return data
-};
 
 
 export const getPeople = films => {
   let people = []
-  for (let film of films) {
+  for (const film of films) {
     const chars = film.people.map (function (char){
-      char.movie = film.title
-     return char
+      char.movie = film.title;
+      return char
     })
     people = people.concat(chars)   
   }
   return people
 }
 
-export const filterDirector = (films, director) => {
-  const filtered = films.filter(film => film.director === director);
-  return filtered
-  } 
-  
 
-export const filterGender = (people, gender) => {
-  const filteredS = people.filter(people => people.gender === gender);
-  return filteredS
-} 
 
 
 //calc agregado

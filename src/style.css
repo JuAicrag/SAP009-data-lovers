@@ -3,12 +3,24 @@ header {
     padding: 10px 16px;
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    font-size: large;
+    font-size: xx-large;
     background-position: 0%;
     display: flex;
     justify-content: space-around;
     align-items: center;
    
+}
+
+#buscaSection {
+    display: flex;
+    align-items: center;
+   justify-content: center;
+}
+
+.curiosidades {
+    background-color: #dba3b0;
+    width: fit-content;
+    
 }
 
 body {
@@ -41,6 +53,7 @@ h1{
   position: fixed;
   bottom: 50px;
   right: 50px;
+  background-color: #dba3b0;
 }
 
 footer{
@@ -124,6 +137,7 @@ select:hover{
     0px 0px 30px #e476bf;
 }
 
+
 input{
     font-size: 16px ;
     text-align: center;
@@ -134,6 +148,8 @@ input{
     outline: none;
     border: none;
     padding: fixed;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .filtermenu{
